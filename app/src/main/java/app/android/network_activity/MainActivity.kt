@@ -1,15 +1,21 @@
 package app.android.network_activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
-import lib.network_utils.initApiCall
+import androidx.appcompat.app.AppCompatActivity
+import lib.network.connection.NetworkConnection
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val networkConnection = NetworkConnection(this)
+        networkConnection.networkState.observe(this) {
+            if (it.isNetworkAvailable) {
+                println("Network available")
+            } else {
+                print("Network not available")
+            }
+        }
+
     }
 }

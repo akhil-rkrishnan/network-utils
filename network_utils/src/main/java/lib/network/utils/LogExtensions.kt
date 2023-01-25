@@ -1,4 +1,4 @@
-package lib.composeutils.utils
+package lib.network.utils
 
 import android.util.Log
 

@@ -1,4 +1,4 @@
-package lib.network_utils
+package lib.network.utils
 
 import com.google.gson.Gson
 

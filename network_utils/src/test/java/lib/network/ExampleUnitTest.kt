@@ -1,4 +1,4 @@
-package lib.network_utils
+package lib.network
 
 import org.junit.Test
 
